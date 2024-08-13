@@ -1,0 +1,45 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<div class="container">
+    <div class="sec">
+        <div class="sec1">
+            <img class="logo" src="../../../assets/ntspl_logo.png" alt="">
+            <div class="sub-sec">
+                <h2>Welcome to Meeting Plus</h2>
+                <p>Check your email for OTP</p>
+                <div class="my-email my-otp">
+                    <div class="emailtext">Enter Your 6 Digit OTP </div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div otp_div">
+                    <input #otp1 class="inputbox" type="text" maxlength="1" [(ngModel)]="otpvalue1" name="otpvalue1" (input)="moveFocus($event, 'otpvalue2')">
+                    <input #otp2 class="inputbox" type="text" maxlength="1" [(ngModel)]="otpvalue2" name="otpvalue2" (input)="moveFocus($event, 'otpvalue3')" (keydown)="moveBack($event, 'otpvalue1', 'otpvalue2')">
+                    <input #otp3 class="inputbox" type="text" maxlength="1" [(ngModel)]="otpvalue3" name="otpvalue3" (input)="moveFocus($event, 'otpvalue4')" (keydown)="moveBack($event, 'otpvalue2', 'otpvalue3')">
+                    <input #otp4 class="inputbox" type="text" maxlength="1" [(ngModel)]="otpvalue4" name="otpvalue4" (input)="moveFocus($event, 'otpvalue5')" (keydown)="moveBack($event, 'otpvalue3', 'otpvalue4')">
+                    <input #otp5 class="inputbox" type="text" maxlength="1" [(ngModel)]="otpvalue5" name="otpvalue5" (input)="moveFocus($event, 'otpvalue6')" (keydown)="moveBack($event, 'otpvalue4', 'otpvalue5')">
+                    <input #otp6 class="inputbox" type="text" maxlength="1" [(ngModel)]="otpvalue6" name="otpvalue6" (keydown)="moveBack($event, 'otpvalue5', 'otpvalue6')">
+                </div>
+
+                <div class="otp" (click)="otpVerified()">Verify</div>
+                <div class="sign-otp">
+                    <div class="signin" (click)="navigateToLogin()">Back to Sign In</div>
+                    <a href="#">Resend OTP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sec">
+        <div class="sec2">
+            <div class="blue-box">
+                <h1 class="bluebox-head">Meeting Plus</h1>
+                <h2 class="bluebox-subhead">Where Meeting Become Meaningful</h2>
+                <div class="white-box">
+                    <img class="meeting" src="../../../assets/mom-meeting.png" alt="">
+                </div>
+                <p class="copyright">© 2024 NTSPL All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</div>

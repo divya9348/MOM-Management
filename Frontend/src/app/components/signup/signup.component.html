@@ -1,0 +1,65 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+<div class="container">
+    <div class="sec">
+        <div class="sec1">
+            <img class="logo" src="../../../assets/ntspl_logo.png" alt="">
+            <div class="sub-sec">
+                <h2>Welcome to Meeting Plus</h2>
+                <p>Enter email & password to log in to your account</p>
+                <div class="my-email">
+                    <div class="emailtext">Email</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/address.png" alt="">
+                    <input class="email" type="text" placeholder="Type Your id" [(ngModel)]="employeeEmail">
+                </div>
+
+                <div class="my-email">
+                    <div class="emailtext">Password</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/hidden.png" alt="">
+                    <input class="email" type="password" placeholder="Type Your Password" [(ngModel)]="password">
+                </div>
+
+                <div class="remember-forgot">
+                    <span><input class="remem" type="checkbox">Remember</span>
+                    <a class="forgot" href="#">Forgot Password?</a>
+                </div>
+
+                <div class="otp" (click)="myloginData()">Sign In</div>
+                <!-- <div class="message" *ngIf="message">{{message}}</div> -->
+
+                <div class="or">
+                    <div class="line"></div>
+                    <div class="text">Don't have an account?</div>
+                    <div class="line"></div>
+                </div>
+                <div class="otp pass" (click)="navigateToSignup()">Sign Up</div>
+
+                <div class="signin" (click)="navigateToLogin()">Back to Sign In</div>
+            </div>
+        </div>
+    </div>
+    <div class="sec">
+        <div class="sec2">
+            <div class="blue-box">
+                <h1 class="bluebox-head">Meeting Plus</h1>
+                <h2 class="bluebox-subhead">Where Meeting Becomes Meaningful</h2>
+                <div class="white-box">
+                    <img class="meeting" src="../../../assets/mom-meeting.png" alt="">
+                </div>
+                <p class="copyright">© 2024 NTSPL All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,190 @@
+*{
+    font-family: Roboto;
+}
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.sec{
+    width: 50%;
+    padding: 0 12px;
+}
+.sec1{
+    height: 100vh;
+    padding: 45px 0 0 50px;
+}
+.sub-sec{
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+p{
+    margin-bottom: 30px;
+}
+.my-email{
+    display: flex;
+    margin-bottom: 5px;
+}
+.emailtext{
+    margin-right: 3px;
+    font-weight: 500;
+}
+.star{
+    color: red;
+}
+.logo{
+    height: 40px;
+}
+.email-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.email-div img{
+    position: absolute;
+    left: 16px;
+    height: 25px;
+}
+.email{
+    padding-left: 50px;
+    font-size: 13px;
+    height: 40px;
+    width: 400px;
+    outline: none;
+    border: 1px solid #c3a3ff;
+    border-radius: 5px;
+}
+.remember-forgot{
+    width: 400px;
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+.remem{
+    margin-right: 5px;
+}
+.forgot{
+    text-decoration: none;
+    float: right;
+}
+.otp{
+    padding: 7px 10px;
+    background-color:#5522b2;
+    width: 400px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    cursor: pointer;
+}
+.or{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+.line{
+    width: 110px;
+    border: 1px solid gray;
+}
+.pass{
+    background-color: white;
+    border:1px solid #5522b2;
+    color:#5522b2;
+    margin-bottom: 28px;
+    cursor: pointer;
+}
+.setpass{
+    border: none;
+    color: gray;
+    background-color:white;
+    margin-bottom: 28px;
+    cursor: pointer;
+}
+.signin{
+    color:#0500FF;
+    margin-left: 22px;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+}
+.message{
+    color:red;
+}
+.signin::before{
+    content: '';
+    display: inline-block;
+    width: 17px; 
+    height: 17px;
+    background-image: url('../../../assets/right-arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: -20px;
+    top: 1px;
+    cursor: pointer;
+}
+.sec2{
+    box-sizing: border-box;
+    height: 100%;
+    align-content: center;
+}
+.blue-box{
+    border-radius: 10px;
+    position: relative;
+    height: 700px;
+    background-color:#352396;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.blue-box::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    background-image: url(../../../assets/background.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    top: 0;
+    left:auto;
+    background-size: contain;
+}
+.white-box{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 5;
+}
+.meeting{
+    height: 350px;
+}
+.bluebox-head{
+    z-index: 3;
+    color: white;
+    margin-bottom: 10px;
+}
+.bluebox-subhead{
+    z-index: 3;
+    color: white;
+    margin-bottom: 20px;
+}
+.text{
+    font-size: 14px;
+}
+.copyright{
+    z-index: 3;
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    bottom: -10px;
+}

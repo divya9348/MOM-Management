@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 283px;
+    background-image: url("../../../assets/meeting2.svg"), url("../../../assets/sidebar-bg.png");
+    background-repeat: no-repeat;
+    padding: 30px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background-position: bottom;
+}
+
+img .logo {
+    height: 42px;
+}
+
+.options {
+    height: 730px;
+    width: 261px;
+    padding: 45px 0 0 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.opt1 {
+    height: 150px;
+    width: 261px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.meeting {
+    display: flex;
+}
+
+.action {
+    display: flex;
+}
+
+.manage {
+    display: flex;
+}
+
+.aerrow-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 140px;
+}
+
+.aerrow-icon img {
+    height: 20px;
+}
+
+.option-logo {
+    height: 30px;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: Roboto;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+p:hover {
+    color: blue;
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid rgb(159, 159, 159);
+    background-color: white;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    padding-left: 298px;
+}
+
+.left-nav {
+    height: 80px;
+    width: 185px;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 30px;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.right-nav {
+    height: 80px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.create {
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, rgb(42, 255, 63), rgb(5, 77, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.create:hover {
+    background-image: linear-gradient(to right, rgb(53, 32, 243), rgb(12, 4, 32));
+}
+
+.icon {
+    height: 80px;
+    width: 245px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.notifi {
+    height: 80px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.num {
+    top: 14px;
+    right: 3px;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+}
+
+.notifi a img {
+    height: 35px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 145px;
+}
+
+.user-logo a img {
+    height: 35px;
+}
+
+.user-name {
+    padding-left: 6px;
+    height: 25px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    width: 110px;
+}
+
+.buttom-header {
+    height: 90px;
+    width: 100%;
+    box-shadow: 0 3px 5px -3px black;
+    border-bottom: 1px solid grey;
+    padding-left: 298px;
+    display: flex;
+    position: fixed;
+    top: 80px;
+    background-color: white;
+    align-items: center;
+}
+
+.left-part1 {
+    height: 70px;
+    width: 180px;
+    display: flex;
+    font-family: Roboto;
+}
+
+.home {
+    height: 70px;
+    width: 90px;
+    border-right: 1px solid rgb(200, 200, 200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home a img {
+    height: 28px;
+}
+
+.timeline {
+    height: 70px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline a img {
+    height: 28px;
+}
+
+.container {
+    padding-left: 298px;
+    margin-top: 170px;
+    background-color: rgb(231, 231, 231);
+
+}
+
+.contr-name {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.left-part2 {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-left: 23px;
+    height: 50px;
+}
+
+.right-part2 {
+    height: 40px;
+    width: 115px;
+    margin-right: 18px;
+    margin-top: 17px;
+    font-size: 20px;
+    font-weight: 400;
+    background-image: linear-gradient(to right, blue, purple);
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: background-image 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.right-part2:hover {
+
+    background-image: linear-gradient(to right, purple, blue);
+    transition: background-image 0.4s ease-in-out, color 0.4s ease-in-out;
+
+}
+
+.filter-logo {
+    height: 30px;
+}
+
+.filter-logo a img {
+    height: 25px;
+    margin-top: 3px;
+}
+
+.input {
+    outline: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    padding-right: 20px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    box-sizing: border-box;
+  
+}
+
+.table-container {
+    padding: 0 20px 20px 20px;
+}
+
+.table {
+    border-radius: 15px;
+    font-family: Roboto;
+    padding-right: 20px;
+}
+
+th {
+    text-align: left;
+    padding-left: 10px;
+    background-color: #203041;
+    color: white;
+
+}
+
+.entries {
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text1 {
+    font-weight: 400;
+}
+
+.search {
+    height: 38px;
+    width: 140px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid rgb(0, 18, 216);
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-text {
+    font-weight: 400;
+    font-size: 18px;
+    width: 129px;
+    border: none;
+}
+
+.search-logo a img {
+    height: 20px;
+    margin-top: 5px;
+    position: absolute;
+    left: 107px;
+    top: 2px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+.more {
+    height: 30px;
+    width: 36px;
+    background-color: rgb(189, 189, 189);
+    border-radius: 50%;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.more a img {
+    height: 25px;
+}
+
+.td-pad {
+    padding-left: 10px;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #8499b0;
+    transition: background-image 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+td:hover {
+    background-image: linear-gradient(to right, blue, purple);
+    color: white;
+}
+
+.add-employee-form {
+    background-color: #ffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    padding-right: 20px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease;
+}
+input[type="text"]:focus,input[type="password"]:focus {
+    border-color: blue;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.row .form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-right: 10px;
+}
+
+.row .form-group:last-child {
+    margin-right: 0;
+}
+
+.checkbox-group {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.add-emp-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.add-emp-btn:active {
+    background-color: #0056b3;
+}
+
+.pagdrop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagination {
+    width: 300px;
+}
+
+.dropdown {
+    display: flex;
+    float: right;
+    column-gap: 10px;
+}
+
+.rowsPerPage {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+select {
+    width: 50px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    text-align: center;
+}

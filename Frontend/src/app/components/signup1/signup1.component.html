@@ -1,0 +1,92 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+<div class="container">
+    <div class="sec">
+        <div class="sec1">
+            <img class="logo" src="../../../assets/ntspl_logo.png" alt="">
+            <div class="sub-sec">
+                <h2>Welcome to Meeting Plus</h2>
+                <p>Please fill the below form to create a new account</p>
+
+                <!-- <div class="tracking">
+                    <div class="track">1</div>
+                    <div class="track">2</div>
+                    <div class="track">3</div>
+                    <div class="track">4</div>
+                </div> -->
+                <div class="my-email">
+                    <div class="emailtext">Employee Name</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/user.png" alt="">
+                    <input class="email" type="text" placeholder="Type Your Name" [(ngModel)]="employeeName" >
+                </div>
+
+                <div class="my-email">
+                    <div class="emailtext">Email</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/address.png" alt="">
+                    <input class="email" type="text" placeholder="Type Your id" [(ngModel)]="employeeEmail" >
+                </div>
+
+                <div class="my-email">
+                    <div class="emailtext">Mobile Number</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/telephone.png" alt="">
+                    <input class="email" type="text" placeholder="Enter Mobile Number" [(ngModel)]="phoneno">
+                </div>
+
+                
+                <div class="my-email">
+                    <div class="emailtext">Password</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/hidden.png" alt="">
+                    <input class="email" type="password" placeholder="Enter Password" [(ngModel)]="password">
+                </div>
+
+                <div class="my-email">
+                    <div class="emailtext">Confirm Password</div>
+                    <h5 class="star">*</h5>
+                </div>
+
+                <div class="email-div">
+                    <img src="../../../assets/hidden.png" alt="">
+                    <input class="email" type="password" placeholder="Enter Password" [(ngModel)]="confirmPassword">
+                </div>
+
+                
+                <div class="otp pass register" (click)="onRegister()">Register</div>
+
+                <div class="signin" >Allready have an account? <a href="#">Sign In</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="sec">
+        <div class="sec2">
+            <div class="blue-box">
+                <h1 class="bluebox-head">Meeting Plus</h1>
+                <h2 class="bluebox-subhead">Where Meeting Becomes Meaningful</h2>
+                <div class="white-box">
+                    <img class="meeting" src="../../../assets/mom-meeting.png" alt="">
+                </div>
+                <p class="copyright">© 2024 NTSPL All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
