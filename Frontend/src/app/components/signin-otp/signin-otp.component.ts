@@ -19,11 +19,11 @@ export class SigninOtpComponent {
 
   constructor(private router: Router, private loginservice: LoginserviceService, private toastr: ToastrService) { }
 
+  //verify otp..................
   otpVerified() {
     const enteredOTP = this.otpvalue1 + this.otpvalue2 + this.otpvalue3 + this.otpvalue4 + this.otpvalue5 + this.otpvalue6;
     const user = sessionStorage.getItem('employeeEmail');
     
-    console.log("enterdotp", enteredOTP);
     if (!user) {
       alert('Email not found in session. Please try again.');
       return;
@@ -31,7 +31,6 @@ export class SigninOtpComponent {
 
     this.loginservice.verifyotp(user, enteredOTP).subscribe(
       (response: any) => {
-        console.log(response.success);
         if (response.success) {
           this.toastr.success("Login Successful", "Success");
           this.router.navigate(['/homepage']);
@@ -40,7 +39,6 @@ export class SigninOtpComponent {
         }
       },
       (error) => {
-        console.error('Error verifying OTP', error);
         this.toastr.error('Error verifying OTP. Please try again later.');
       }
     );
@@ -73,7 +71,23 @@ export class SigninOtpComponent {
     }
   }
 
+  //Resend otp........................
+  employeeEmail: any = sessionStorage.getItem('employeeEmail');
+  
+  getOtp() {
+    this.loginservice.sendOtp(this.employeeEmail).subscribe((response: any) => {
+
+      if (response.success) {
+        this.toastr.success("OTP sent successfully", 'Your OTP is: ' + response.otp);
+      } else {
+        this.toastr.error('You are not Registered!');
+      }
+    }, error => {
+      this.toastr.error('Error sending OTP. Please try again later.');
+    });
+  }
+
   navigateToLogin() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/loginthroughotp']);
   }
 }

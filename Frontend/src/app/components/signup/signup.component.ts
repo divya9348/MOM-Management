@@ -17,7 +17,6 @@ export class SignupComponent {
   myloginData() {
     this.loginservice.login(this.employeeEmail, this.password).subscribe(
       response => {
-       
           this.toastr.success("Login Successful", "Success");
           this.router.navigate(['/homepage']);
       },
@@ -29,10 +28,10 @@ export class SignupComponent {
   }
 
   navigateToLogin() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/loginthroughotp']);
   }
 
   navigateToSignup(){
-    this.router.navigate(['/signup1'])
+    this.router.navigate(['/signup'])
   }
 }

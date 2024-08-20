@@ -1,5 +1,7 @@
 const messages={
-   
+
+        STATUS_SUCCESS:201,
+        STATUS_ERROR:500,
         USER_ALREADY_EXISTS: 'User already exists.',
         CREATED_SUCCESSFULLY: 'Created Successfully.',
         SERVER_ERROR: 'Server Error...',
@@ -17,7 +19,6 @@ const messages={
         USERID_NOT_FOUND: 'User ID not found.',
         SUCCESS: true,
         FAILURE: false
-   
     
 }
 module.exports=messages;

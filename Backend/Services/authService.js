@@ -3,6 +3,7 @@ const otpSchema = require('../Models/otpSchema');
 const transporter = require('../emailsetup/mailsetup');
 const messages = require('../constants/message');
 const authMiddleware = require('../middlewares/authMiddleware');
+const commonHelper=require('../helper/commonHelper');
 
 // Function to generate OTP
 function generateOtp() {
@@ -16,8 +17,8 @@ async function signinService(employeeEmail, password) {
     console.log("Employee Email!!", employeeEmail);
     const user = await employeeData.findOne({ employeeEmail });
     if (user) {
-        if (password == user.password) {
-            
+    const validPassword=await commonHelper.comparePassword(password,user.password);
+        if (validPassword) {
             const token = await authMiddleware.generateToken({
                 employeeEmail: user.employeeEmail,
                 phoneno: user.phoneno

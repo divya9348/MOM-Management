@@ -1,24 +1,37 @@
-const { createEmployeebyAdminService,AdminlistEmployeeservice, createEmployeeService, fetchEmployeeByIdService, listEmployeeservice } = require('../Services/employeeService');
+const { createEmployeebyAdminService,AdminlistEmployeeservice, createEmployeeService, fetchEmployeeByIdService, listEmployeeservice, checkEmployeeExistenceservice } = require('../Services/employeeService');
+const message= require('../constants/message');
 
 // Create Employee controller by Admin
 const createEmpThroughAdmin = async (req, res) => {
     try {
         const result = await createEmployeebyAdminService(req.body);
-
+        
         if (result) {
-            res.status(201).json({ message: result.message });
+            res.status(201).json({success:result.success, message: result.message, status:result.status });
         } else {
-            res.status(400).json({ message: result.message });
+            res.status(400).json({success:result.success, message: result.message, status:result.status });
         }
     } catch (error) {
-        res.status(500).json({ message: "Server Error...", error });
+        res.status(500).json({ message: message.SERVER_ERROR, status:message.STATUS_ERROR, error });
     }
 }
 
+const checkEmployeeExistence = async (req, res) => {
+    try {
+        const { employeeEmail, employeeID } = req.body;
+        const exists = await checkEmployeeExistenceservice(employeeEmail, employeeID);
+        return res.status(200).json(exists);
+    } catch (error) {
+        return res.status(500).json({ message: "Server Error...", error });
+    }
+};
+
+
+// To See AdminList of Employee controller by Admin.......
 const AdminlistEmployee= async(req, res)=>{
     try{
         const result= await AdminlistEmployeeservice(req.body, req.query);
-         console.log("result",result);
+         console.log("result",result)
          console.log("req.body",req.body)
          console.log("req.query",req.query)
 
@@ -36,6 +49,7 @@ const AdminlistEmployee= async(req, res)=>{
 // Create Employee controller
 const createEmployee = async (req, res) => {
     try {
+        console.log('req.body',req.body);
         const result = await createEmployeeService(req.body);
 
         if (result) {
@@ -82,6 +96,7 @@ const listEmployee= async(req, res)=>{
 
 module.exports = {
     createEmpThroughAdmin,
+    checkEmployeeExistence,
     AdminlistEmployee,
     createEmployee,
     fetchEmployeeById,

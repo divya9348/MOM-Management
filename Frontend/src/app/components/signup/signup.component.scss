@@ -69,6 +69,7 @@ p{
 .forgot{
     text-decoration: none;
     float: right;
+    color: blue;
 }
 .otp{
     padding: 7px 10px;
@@ -90,22 +91,15 @@ p{
 }
 .line{
     width: 110px;
-    border: 1px solid gray;
+    border: 1px solid rgb(200, 200, 200);
 }
 .pass{
-    background-color: white;
-    border:1px solid #5522b2;
-    color:#5522b2;
+    background-color: rgb(229, 229, 229);
+    color:#000000;
     margin-bottom: 28px;
     cursor: pointer;
 }
-.setpass{
-    border: none;
-    color: gray;
-    background-color:white;
-    margin-bottom: 28px;
-    cursor: pointer;
-}
+
 .signin{
     color:#0500FF;
     margin-left: 22px;

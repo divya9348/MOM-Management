@@ -11,7 +11,7 @@ export class LoginserviceService {
   constructor(private http: HttpClient) { }
 
   createdByAdmin(employeeName:string, employeeEmail:string, phoneno:number, password:string, confirmPassword:string,employeeID:string){
-    return this.http.post<any>('http://localhost:4000/employee/createdByAdmin',{ employeeName, employeeEmail, phoneno, password, confirmPassword,employeeID });
+    return this.http.post<any>(`${this.apiUrl}/employee/createdByAdmin`,{ employeeName, employeeEmail, phoneno, password, confirmPassword,employeeID });
   }
 
   listEmpByAdmin(searchKey: string = ''): Observable<any> {
@@ -19,7 +19,7 @@ export class LoginserviceService {
   }
 
   signup(employeeName:string, employeeEmail:string, phoneno:number, password:string, confirmPassword:string){
-    return this.http.post<any>('http://localhost:4000/employee/create',{ employeeName, employeeEmail, phoneno, password, confirmPassword });
+    return this.http.post<any>(`${this.apiUrl}/employee/create`,{ employeeName, employeeEmail, phoneno, password, confirmPassword });
   }
 
   login(employeeEmail: string, password: string): Observable<any> {
@@ -27,10 +27,14 @@ export class LoginserviceService {
   }
 
   sendOtp(employeeEmail:String):Observable<any>{
-    return this.http.post<any>('http://localhost:4000/auth/getOtp',{ employeeEmail });
+    return this.http.post<any>(`${this.apiUrl}/auth/getOtp`,{ employeeEmail });
   }
 
   verifyotp(employeeEmail:string, otp:string):Observable<any>{
-    return this.http.post<any>('http://localhost:4000/auth/verifyOtp',{ employeeEmail, otp });
+    return this.http.post<any>(`${this.apiUrl}/auth/verifyOtp`,{ employeeEmail, otp });
+  }
+
+  checkEmployeeExists(employeeEmail: string, employeeID: string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.apiUrl}/employee/check-exists`, { employeeEmail, employeeID });
   }
 }

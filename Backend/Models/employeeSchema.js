@@ -1,4 +1,3 @@
-const { required, bool, boolean } = require('joi');
 const mongoose= require('mongoose');
 const validator= require('validator');
 

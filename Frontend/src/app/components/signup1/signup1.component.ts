@@ -29,10 +29,10 @@ export class Signup1Component {
     this.loginservice.signup(this.employeeName, this.employeeEmail,this.phoneno ,this.password, this.confirmPassword).subscribe(
       response=>{
         this.toastr.success("Register Successfully", "Success");
-        this.router.navigate(['/signup']);
+        this.router.navigate(['/']);
     },
-    // error => {
-    //   this.toastr.error("Invalid User", 'Error');
-    // }
+    error => {
+      this.toastr.error("Invalid User", 'Error');
+    }
   )}
 }

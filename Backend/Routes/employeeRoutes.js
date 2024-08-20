@@ -5,6 +5,8 @@ const employeeController = require('../Controlers/employeeControler');
 const { verifyToken } = require('../middlewares/authMiddleware');
 
 router.post('/createdByAdmin',employeeController.createEmpThroughAdmin)
+router.post('/check-exists', employeeController.checkEmployeeExistence);
+
 router.post('/create', validator.createEmployeeValidator, employeeController.createEmployee);
 router.get('/viewSingleEmployee/:id', verifyToken, employeeController.fetchEmployeeById);
 router.post('/listemployee',validator.listEmployeeValidator, verifyToken, employeeController.listEmployee);

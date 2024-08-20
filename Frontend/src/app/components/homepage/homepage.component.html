@@ -64,61 +64,75 @@
     </div>
 
     <div class="table-container">
-        <div class="table">
-
-
-            <form action="" class="add-employee-form" (ngSubmit)="onRegister()">
-                <div class="row">
-                    <div class="form-group">
-                        <label for="name">Employee Name</label>
-                        <input type="text" class="input" placeholder="Enter Employee Name" name="employeeName"
-                            [(ngModel)]="employeeName">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Employee Email</label>
-                        <input type="text" class="input" placeholder="Enter Email" name="employeeEmail"
-                            [(ngModel)]="employeeEmail">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" class="input" placeholder="Enter Phone Number" name="phoneno"
-                            [(ngModel)]="phoneno">
+        <form action="" class="add-employee-form" (ngSubmit)="onRegister()">
+            <div class="row">
+                <div class="form-group">
+                    <label for="name">Employee Name</label>
+                    <input type="text" class="input" placeholder="Enter Employee Name" name="employeeName"
+                        [(ngModel)]="employeeName" #employeeNameRef="ngModel" required>
+                    <div *ngIf="employeeNameRef.invalid && employeeNameRef.touched" class="error-message">
+                        Employee Name is required.
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="form-group">
-                        <label for="designation">Password</label>
-                        <input type="password" class="input" placeholder="Enter Password" name="password"
-                            [(ngModel)]="password">
+                <div class="form-group">
+                    <label for="email">Employee Email</label>
+                    <input type="text" class="input" placeholder="Enter Email" name="employeeEmail"
+                        [(ngModel)]="employeeEmail" #employeeEmailRef="ngModel" required>
+                    <div *ngIf="employeeEmailRef.invalid && employeeEmailRef.touched" class="error-message">
+                        Employee Email is required.
                     </div>
-
-                    <div class="form-group">
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password" class="input" placeholder="Confirm Password" name="confirmPassword"
-                            [(ngModel)]="confirmPassword">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="designation">Emp Id</label>
-                        <input type="text" class="input" placeholder="Enter Emp Id" name="employeeID"
-                            [(ngModel)]="employeeID">
-                    </div>
-
                 </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox">
-                    <p>Set as Meeting Organiser</p>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" class="input" placeholder="Enter Phone Number" name="phoneno"
+                        [(ngModel)]="phoneno" #phonenoRef="ngModel" required>
+                    <div *ngIf="phonenoRef.invalid && phonenoRef.touched" class="error-message">
+                        Phone Number is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="designation">Password</label>
+                    <input type="password" class="input" placeholder="Enter Password" name="password"
+                        [(ngModel)]="password" required minlength="6" #passwordField="ngModel">
+                    <div class="error-message" *ngIf="passwordField.invalid && passwordField.touched">
+                        Password is required (min 6 characters).
+                    </div>
                 </div>
 
-                <button class="add-emp-btn">Submit</button>
-            </form>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" class="input" placeholder="Confirm Password" name="confirmPassword"
+                        [(ngModel)]="confirmPassword" required #confirmPasswordField="ngModel">
+                    <div class="error-message" *ngIf="confirmPasswordField.invalid && confirmPasswordField.touched">
+                        Confirm Password is required.
+                    </div>
+                    <div class="error-message" *ngIf="password !== confirmPassword && confirmPasswordField.touched">
+                        Passwords do not match.
+                    </div>
+                </div>
 
-        </div>
+                <div class="form-group">
+                    <label for="designation">Emp Id</label>
+                    <input type="text" class="input" placeholder="Enter Emp Id" name="employeeID"
+                        [(ngModel)]="employeeID" required #employeeIDField="ngModel">
+                    <div class="error-message" *ngIf="employeeIDField.invalid && employeeIDField.touched">
+                        Employee ID is required.
+                    </div>
+                </div>
+            </div>
 
+            <div class="checkbox-group">
+                <input type="checkbox">
+                <p>Set as Meeting Organiser</p>
+            </div>
+
+            <button class="add-emp-btn">Submit</button>
+        </form>
         <div class="table">
             <div class="contr-name">
                 <div class="left-part2">Manage Employees</div>
@@ -130,6 +144,7 @@
                     <div class="text1">
                         Showing {{ start }} to {{ end }} of {{ totalCount }} entries
                     </div>
+
                     <div class="search">
                         <input type="text" class="search-text" placeholder="Search" [(ngModel)]="searchKey"
                             (ngModelChange)="onSearchChange($event)" />
@@ -138,8 +153,8 @@
                         </div>
                     </div>
 
-
                 </div>
+
                 <table style="width: 100%;">
                     <thead>
                         <tr>
@@ -159,18 +174,25 @@
                         </tr>
                     </tbody>
                 </table>
+
                 <div class="pagdrop">
                     <nav class="pagination" aria-label="Employee List Pagination">
                         <pagination-controls (pageChange)="pageChange($event)"></pagination-controls>
                     </nav>
+
                     <div class="dropdown">
                         <label class="rowsPerPage" for="rowsPerPage">Rows Per Page </label>
                         <select id="rowsPerPage" [(ngModel)]="itemsPerPage">
                             <option *ngFor="let option of rowsPerPageOptions" [value]="option">{{ option }}</option>
                         </select>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
